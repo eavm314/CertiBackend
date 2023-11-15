@@ -1,0 +1,50 @@
+{"level":"info","message":"::1 - - [13/Nov/2023:16:45:39 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:45:39 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:46:20 +0000] \"GET /users HTTP/1.1\" 404 144 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:46:24 +0000] \"GET /user HTTP/1.1\" 404 143 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:46:27 +0000] \"GET /users/1 HTTP/1.1\" 200 111 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:46:32 +0000] \"GET /users/ HTTP/1.1\" 404 145 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:46:35 +0000] \"GET /users HTTP/1.1\" 404 144 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"getUserById"}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:49:03 +0000] \"GET /users/1 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"getUserById"}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:50:07 +0000] \"GET /users/1 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+{"level":"info","message":"getUserById"}
+{"level":"info","message":"::1 - - [13/Nov/2023:16:51:08 +0000] \"GET /users/12 HTTP/1.1\" 404 28 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}
+info:[13/Nov/2023:12:53:50 -0400] getUserById
+info:[13/Nov/2023:12:53:50 -0400] ::1 - - [13/Nov/2023:16:53:50 +0000] "GET /users/12 HTTP/1.1" 404 28 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+info:[13/Nov/2023:12:53:52 -0400] getUserById
+info:[13/Nov/2023:12:53:52 -0400] ::1 - - [13/Nov/2023:16:53:52 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+info:[13/Nov/2023:12:58:51 -0400] getUserById: 
+info:[13/Nov/2023:12:58:51 -0400] ::1 - - [13/Nov/2023:16:58:51 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+info:[13/Nov/2023:12:59:16 -0400] getUserById: 1
+info:[13/Nov/2023:12:59:16 -0400] ::1 - - [13/Nov/2023:16:59:16 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+info:[13/Nov/2023:12:59:33 -0400] getUserById: 32
+info:[13/Nov/2023:12:59:33 -0400] ::ffff:127.0.0.1 - - [13/Nov/2023:16:59:33 +0000] "GET /users/32 HTTP/1.1" 404 28 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+info:[13/Nov/2023:13:07:24 -0400] getUserById: 76aea011-756f-45e7-9675-bc3bbd7547cd
+info:[13/Nov/2023:13:07:24 -0400] ::1 - - [13/Nov/2023:17:07:24 +0000] "GET /users/76aea011-756f-45e7-9675-bc3bbd7547cd HTTP/1.1" 200 128 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:13:10:04 -0400] ::1 - - [13/Nov/2023:17:10:04 +0000] "POST /users HTTP/1.1" 201 175 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:13:32:13 -0400] ::1 - - [13/Nov/2023:17:32:13 +0000] "POST /users HTTP/1.1" 201 175 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:14:10:51 -0400] Obteniendo User por Id
+info:[13/Nov/2023:14:10:51 -0400] service, getUserById
+info:[13/Nov/2023:14:10:51 -0400] repository, findById
+info:[13/Nov/2023:14:10:51 -0400] ::1 - - [13/Nov/2023:18:10:51 +0000] "GET /users/76aea011-756f-45e7-9675-bc3bbd7547cd HTTP/1.1" 200 128 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:14:12:02 -0400] Creando usuario
+info:[13/Nov/2023:14:12:02 -0400] service, createUser
+info:[13/Nov/2023:14:12:02 -0400] repository, createUser
+info:[13/Nov/2023:14:12:02 -0400] ::1 - - [13/Nov/2023:18:12:02 +0000] "POST /users HTTP/1.1" 201 177 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:14:12:41 -0400] Creando usuario
+debug:[13/Nov/2023:14:12:41 -0400] controller, createUser([object Object])
+info:[13/Nov/2023:14:12:41 -0400] service, createUser
+debug:[13/Nov/2023:14:12:41 -0400] service, createUser([object Object])
+info:[13/Nov/2023:14:12:41 -0400] repository, createUser
+debug:[13/Nov/2023:14:12:41 -0400] repository, createUser([object Object])
+error:[13/Nov/2023:14:12:41 -0400] Error al procesar la solicitud
+info:[13/Nov/2023:14:12:41 -0400] ::1 - - [13/Nov/2023:18:12:41 +0000] "POST /users HTTP/1.1" 400 1142 "-" "PostmanRuntime/7.35.0"
+info:[13/Nov/2023:14:19:06 -0400] Creando usuario
+debug:[13/Nov/2023:14:19:06 -0400] controller, createUser([object Object])
+info:[13/Nov/2023:14:19:06 -0400] service, createUser
+debug:[13/Nov/2023:14:19:06 -0400] service, createUser(username,enrique11,email,enrique11@gmail.com,password,string,roleId,675)
+info:[13/Nov/2023:14:19:06 -0400] repository, createUser
+debug:[13/Nov/2023:14:19:06 -0400] repository, createUser([object Object])
+info:[13/Nov/2023:14:19:06 -0400] ::1 - - [13/Nov/2023:18:19:06 +0000] "POST /users HTTP/1.1" 201 177 "-" "PostmanRuntime/7.35.0"
