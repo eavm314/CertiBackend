@@ -4,4 +4,6 @@ export interface UserResponseDto {
     email: string;
     lastLogin: Date | null;
     roleId: string;
+    token?: string;
+
 }

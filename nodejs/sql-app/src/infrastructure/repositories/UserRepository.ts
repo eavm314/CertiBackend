@@ -85,6 +85,6 @@ export class UserRepository implements IUserRepository {
 
         repository.merge(user, updateData);
         const updatedUser = await repository.save(user);
-        return updatedUser;
+        return new User(updatedUser);
     }
 }

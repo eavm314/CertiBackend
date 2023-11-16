@@ -10,6 +10,8 @@ export class User {
     createdAt: Date;
     lastLogin: Date | null;
     role: IRoleEntity;
+    token: string | null;
+
 
     constructor(userEntity: IUserEntity) {
         this.id = userEntity.id || uuidv4();

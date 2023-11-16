@@ -6,9 +6,9 @@ export class RoleEntity implements IRoleEntity {
     @PrimaryGeneratedColumn("uuid")
     id!: string;
 
-    @Column({ type: 'varchar' })
+    @Column({ type: 'varchar', unique: true })
     name!: string;
 
-    @Column({ type: 'text', unique: true })
+    @Column({ type: 'text' })
     description!: string;
 }
