@@ -1,31 +1,43 @@
 import { IUserEntity } from "../../domain/entities/IUserEntity";
+import { ICacheService } from "../../domain/interfaces/ICacheService";
+import { IRoleRepository } from "../../domain/interfaces/IRoleRepository";
 import { IUserRepository } from "../../domain/interfaces/IUserRepository";
 import { User } from "../../domain/models/User";
 import logger from "../../infrastructure/logger/logger";
-import { RoleRepository } from "../../infrastructure/repositories/RoleRepository";
 import { CreateUserDto } from "../dtos/CreateUserDto";
 import { UserResponseDto } from '../dtos/UserResponseDto';
 
 export class UserService {
     constructor(
         private userRepository: IUserRepository, 
-        private roleRepository: RoleRepository
+        private roleRepository: IRoleRepository,
+        private cacheService: ICacheService
     ) { }
 
     async getUserById(id: string): Promise<UserResponseDto | null> {
         logger.info("service, getUserById");
         logger.debug(`service, getUserById(${id})`);
+        
+        const userCache = await this.cacheService.get(`USER:${id}`);
+
+        if (userCache){
+            const userResponse = JSON.parse(userCache) as UserResponseDto;
+            logger.info(`UserCache recuperado: ${userResponse.email}`);
+            return userResponse;
+        }
 
         const user = await this.userRepository.findById(id);
         if (!user) return null;
-
+        
         const userResponse: UserResponseDto = {
             id: user.id,
             username: user.username,
             email: user.email,
             lastLogin: user.lastLogin,
-            roleId: user.role.id
+            roleId: user.role?.id
         };
+
+        this.cacheService.set(`USER:${user.id}`, JSON.stringify(user));
 
         return userResponse;
     }

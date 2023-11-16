@@ -23,3 +23,7 @@ export const jwt = {
     secretKey: process.env.JWT_SECRET || 'your_secret_key',
     expirationTime: process.env.JWT_EXPIRATION_TIME || '1h',
 }
+
+export const redis_env = {
+    url: process.env.RD_URL || 'redis.bo',
+}

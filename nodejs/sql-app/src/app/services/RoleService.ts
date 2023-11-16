@@ -1,11 +1,11 @@
 import { IRoleEntity } from "../../domain/entities/IRoleEntity";
+import { IRoleRepository } from "../../domain/interfaces/IRoleRepository";
 import { Role } from "../../domain/models/Role";
-import { RoleRepository } from "../../infrastructure/repositories/RoleRepository";
 import { CreateRoleDTO } from "../dtos/CreateRoleDto";
 
 
 export class RoleService {
-    constructor(private roleRepository: RoleRepository) { }
+    constructor(private roleRepository: IRoleRepository) { }
 
     async createRole(roleDto: CreateRoleDTO): Promise<Role> {
         const roleEntity: IRoleEntity = {

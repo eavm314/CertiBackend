@@ -3,18 +3,28 @@ import bcrypt from "bcrypt";
 import { IUserEntity } from "../../domain/entities/IUserEntity";
 import { User } from "../../domain/models/User";
 import logger from "../../infrastructure/logger/logger";
-import { UserRepository } from "../../infrastructure/repositories/UserRepository";
-import { EncryptJwt } from "../../infrastructure/utils/EncryptJwt";
 import { LoginDto } from "../dtos/LoginDto";
 import { UserResponseDto } from "../dtos/UserResponseDto";
+import { IUserRepository } from "../../domain/interfaces/IUserRepository";
+import { IEncrypt } from "../utils/IEncrypt";
+import { ICacheService } from "../../domain/interfaces/ICacheService";
 
 export class AuthService {
 
-    constructor(private userRepository: UserRepository, private encrypt: EncryptJwt) {
+    constructor(
+        private userRepository: IUserRepository, 
+        private encrypt: IEncrypt,
+        private cacheService: ICacheService
+    ) { }
 
+    async getCache() {
+        const sol = await this.cacheService.get('USER:627c8259-e1d2-4a0a-9d8a-2528b9a395f7');
+        console.log(sol);
     }
 
     async login(loginDTO: LoginDto): Promise<UserResponseDto> {
+        this.getCache();
+
         const userEntity: Partial<IUserEntity> = {
             email: loginDTO.email,
             passwordHash: loginDTO.password
@@ -25,6 +35,7 @@ export class AuthService {
             throw Error('El email o el password son incorrectos');
         }
 
+        this.cacheService.set(`USER:${user.id}`, JSON.stringify(user));
         // TODO: llevarlo al utils 
 
         const isPasswordCorrect = await bcrypt.compare(userEntity.passwordHash, user.passwordHash);
