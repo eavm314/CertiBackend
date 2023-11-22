@@ -4,7 +4,7 @@ dotenv.config();
 
 export const env = {
     port: parseInt(process.env.ENV_PORT) || 3000,
-    env: process.env.ENV,
+    env: process.env.ENV || "develop",
 };
 
 export const db = {

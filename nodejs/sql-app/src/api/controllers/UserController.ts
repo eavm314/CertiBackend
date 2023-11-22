@@ -3,6 +3,8 @@ import { UserService } from '../../app/services/UserService';
 import { UserResponseDto } from '../../app/dtos/UserResponseDto';
 import { CreateUserDto } from '../../app/dtos/CreateUserDto';
 import logger from '../../infrastructure/logger/logger';
+import { userValidationRules } from '../middleware/userValidation';
+import { validate } from 'uuid';
 
 export class UserController {
     public router: Router;
@@ -79,7 +81,7 @@ export class UserController {
 
     public routes() {
         this.router.get('/:id', this.getUserById.bind(this));
-        this.router.post('/', this.createUser.bind(this));
+        this.router.post('/', userValidationRules(), validate, this.createUser.bind(this));
         this.router.delete('/:id', this.deleteUser.bind(this));
         this.router.put('/:id', this.updateUser.bind(this));
     }

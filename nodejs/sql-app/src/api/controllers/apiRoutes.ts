@@ -23,12 +23,10 @@ const userController = new UserController(userService);
 const authService = new AuthService(userRepository, encrypt, redisService);
 const authController = new AuthController(authService);
 
-export function apiRoutes(): Router {
-    const router = Router();
+const API:string = '/api';
 
-    router.use('/users', userController.router);
-    router.use('/roles', roleController.router);
-    router.use('/auth', authController.router);
-
-    return router;
-}
+export const routes = (server: any) => {
+    server.use(`${API}/users`, userController.router);
+    server.use(`${API}/roles`, roleController.router);
+    server.use(`${API}/auth`, authController.router);
+};
