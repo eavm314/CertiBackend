@@ -27,3 +27,8 @@ export const jwt = {
 export const redis_env = {
     url: process.env.RD_URL || 'redis.bo',
 }
+
+export const app_info = {
+    title: process.env.SW_TITLE || 'MyApp',
+    version: process.env.SW_VERSION || '0.0.0',
+}

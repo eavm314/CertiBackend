@@ -14,6 +14,24 @@ export class UserService {
         private cacheService: ICacheService
     ) { }
 
+    // get all users
+    async getUsers(): Promise<UserResponseDto[]> {
+        const users = await this.userRepository.findAll();
+        logger.debug(`Users from repo: ${JSON.stringify(users)}`)
+        const usersResponse: UserResponseDto[] = users.map((user: User) => {
+            const userDto: UserResponseDto = {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                lastLogin: user.lastLogin,
+                roleId: user.role?.id
+            }
+            return userDto;
+        });
+
+        return usersResponse;
+    }
+
     async getUserById(id: string): Promise<UserResponseDto | null> {
         logger.info("service, getUserById");
         logger.debug(`service, getUserById(${id})`);

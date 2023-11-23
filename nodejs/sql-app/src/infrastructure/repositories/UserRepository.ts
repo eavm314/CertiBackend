@@ -7,6 +7,13 @@ import { User } from "../../domain/models/User";
 import logger from "../logger/logger";
 
 export class UserRepository implements IUserRepository {
+    async findAll(): Promise<User[]> {
+        const userRepository = AppDataSource.getRepository(UserEntity);
+        const users = await userRepository.find({
+            relations: ['role']
+        });
+        return users.map(user => new User(user));
+    }
     
     async findById(id: string): Promise<User | null> {
         logger.info("repository, findById");
